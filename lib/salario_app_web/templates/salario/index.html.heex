@@ -1,0 +1,17 @@
+<h1>Ingrese su nombre y sueldo</h1>
+
+<%= form_for @conn, "/calcular", [method: :post], fn f -> %>
+  <div>
+    <label>Nombre:</label>
+    <%= text_input f, :nombre %>
+  </div>
+
+  <div>
+    <label>Sueldo mensual:</label>
+    <%= number_input f, :sueldo, step: "0.01" %>
+  </div>
+
+  <div>
+    <%= submit "Calcular" %>
+  </div>
+<% end %>
